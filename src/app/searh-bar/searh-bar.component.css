@@ -1,0 +1,10 @@
+.search-bar{
+    width: 500px;
+}
+
+.btn{
+    transition: 0.3s;
+}
+.btn:hover{
+    background-color: #f6f6f6;
+}

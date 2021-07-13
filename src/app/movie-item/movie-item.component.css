@@ -1,0 +1,9 @@
+.movie-cover img {
+    height: 300px;
+    width: 250px;
+    border-radius: 3px;
+}
+
+.movie-title{
+    width: 250px;
+}

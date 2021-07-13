@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.scale{
+    transition: 0.4s;
+}
+
+.scale:hover{
+    transform: scale(1.03);
+}

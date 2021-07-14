@@ -2,6 +2,8 @@
 This is a movies website built using angular and omdb api (omdbapi.com)
 ## DEMO
 
+https://user-images.githubusercontent.com/55637712/125691378-cf8ad2fe-e848-4291-9d71-f15c4b31fa92.mp4
+
 ## Configuration
 Change the key in *src/app/service/API-key-example.json* with your omdb key and rename the file to API-key.json
 ## Run the application
@@ -13,7 +15,7 @@ npm install
 ```
 2. Development server
 
-To start developement server on http://127.0.0.1:42000  run:
+To start developement server on http://127.0.0.1:4200  run:
 ```
 ng serve
 ```

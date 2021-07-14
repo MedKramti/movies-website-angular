@@ -13,10 +13,11 @@ export class FilterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
-  filterChanged(){
-    this.filter.emit(this.selectedFilter);
+  filterChanged(filter:string){
+    this.filter.emit(filter);
   }
 
 }

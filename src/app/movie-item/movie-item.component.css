@@ -1,4 +1,4 @@
-.movie-cover img {
+.movie-cover .poster {
     height: 300px;
     width: 250px;
     border-radius: 3px;
@@ -6,4 +6,13 @@
 
 .movie-title{
     width: 250px;
+}
+
+.rating{
+    right:0;
+    top:0;
+    margin:10px;
+    background-color: white;
+    padding:3px 8px;
+    border-radius: 5px;
 }

@@ -1,4 +1,13 @@
+<!-- 
 <select class="form-control" [(ngModel)]="selectedFilter" (change) = "filterChanged()">
     <option value="all">All</option>
     <option value="search">Search</option>
 </select>
+-->
+
+<div class="filters d-flex">
+    <span (click)="filterChanged('all')" class="filter cursor-pointer" [ngClass] = "{ 'filter-selected':selectedFilter=='all' }">All</span>
+    <span (click)="filterChanged('sDate')" class="filter cursor-pointer" [ngClass] = "{ 'filter-selected':selectedFilter=='sDate' }">Sort by date</span>
+     <span class="filter cursor-pointer" [ngClass] = "{ 'filter-selected':selectedFilter=='search' }">Search</span>
+
+</div>

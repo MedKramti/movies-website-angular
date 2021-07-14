@@ -21,13 +21,15 @@ export class HomeComponent implements OnInit {
 
   fetchMoviesFromJSON():void{
     // fetch data from the API using the ids
-
+    this.movies = []
     data.id.forEach( id => {
         this.omdbService.getById(id).subscribe(
           data => {this.movies.push(data)},
           error => {this.errorMessage = HandleErrorService.handleError(error);}
         );
     });
+
+
   }
 
   displayMovie(movie:any):void{
@@ -43,8 +45,16 @@ export class HomeComponent implements OnInit {
   }
 
   filterChanged(filter:string):void{
-    if (filter === "all") this.fetchMoviesFromJSON();
+    switch(filter){
+      case "all" :  this.fetchMoviesFromJSON(); break;
+      case "sDate" : this.sortByDate(); break;
+    } 
     this.selectedFilter = filter;
+  }
+  sortByDate():void{
+    this.movies.sort((m1:Movie, m2:Movie) => {
+      return new Date(m2.Released).getTime() - new Date(m1.Released).getTime()
+    });
   }
 
 }

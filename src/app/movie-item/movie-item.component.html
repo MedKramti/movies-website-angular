@@ -1,7 +1,10 @@
-<div routerLink="/movie/{{movie.imdbID}}" [state] = "{ movie:movie }" class="movie col-lg-4 col-md-8 col-sm-12 cursor-pointer scale">
-    <div class="movie-cover mt-4">
-        <img class="shadow-sm" [alt]="movie.Title" 
+<div routerLink="/movie/{{movie.imdbID}}" [state] = "{ movie:movie }" class="col-12 cursor-pointer scale">
+    <div class="movie-cover mt-4 position-relative ">
+        <img class="shadow-sm poster" [alt]="movie.Title" 
         src="{{movie.Poster}}">
+        <div class="rating position-absolute">
+           {{movie.imdbRating}}<img src="../assets/star.svg" width="18px">
+        </div>
     </div>
     <p class="movie-title text-center">
         {{movie.Title}}

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Movie } from '../class/movie';
+import { OMDBService } from '../service/omdb.service';
 
 @Component({
   selector: 'searh-bar',
@@ -8,18 +9,22 @@ import { Movie } from '../class/movie';
 })
 export class SearhBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private omdbService : OMDBService) { }
   @Output() movies : EventEmitter<Movie> = new EventEmitter<Movie>();
   ngOnInit(): void {
   }
 
-  search():void{
-    console.log("Button clicked");
+  search(title : HTMLInputElement):void{
+    // console.log("Button clicked");
     // fetch movies from the api
-    let m : Movie = new Movie();
-    m.Title = "Hello world";
-    m.Poster = "https://upload.wikimedia.org/wikipedia/en/1/14/Coverdvdcover.jpg";
-    this.movies.emit(m);
+    this.omdbService.getByTitle(title.value).subscribe(
+      (data:any) => { 
+         let movie = data; 
+         this.movies.emit(movie);
+        },
+      error => { console.log("Error : ",error)}
+    );
+    
   }
 
 }

@@ -10,3 +10,7 @@
 .scale:hover{
     transform: scale(1.03);
 }
+
+.website-title{    
+    font-family: 'Zen Tokyo Zoo', cursive;
+}

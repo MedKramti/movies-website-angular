@@ -8,6 +8,9 @@ import { MovieItemComponent } from './movie-item/movie-item.component';
 import { MoviesContainerComponent } from './movies-container/movies-container.component';
 import { SearhBarComponent } from './searh-bar/searh-bar.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
+import { FilterComponent } from './filter/filter.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { HomeComponent } from './home/home.component';
     MovieItemComponent,
     MoviesContainerComponent,
     SearhBarComponent,
-    HomeComponent
+    HomeComponent,
+    FilterComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-8 col-sm-12 text-center">
+            <img class="shadow" [src]="movie.Poster" [alt]="movie.Title">
+            <div *ngIf="movie.Genre" class="genre-list mt-4 mb-4 cursor-pointer">
+                <span class="genre text-center" *ngFor="let g of movie.Genre.split(',', 3)">{{trim(g)}}</span>
+
+            </div>
+        </div>
+        <div class="col-lg-5 movie-details mt-2">
+            <ul>
+                <li>
+                    <b>Title: </b> {{movie.Title}} ( {{movie.Year}} )
+                </li>
+                <li>{{movie.Plot}}</li>
+                <li><b>Rated: </b> {{movie.Rated}}</li>
+                <li><b>Writer: </b> {{movie.Writer}}</li>
+                <li><b>Director: </b> {{movie.Director}}</li>
+                <li><b>Duration: </b> {{movie.Runtime}}</li>
+                <li><b>Rating: </b> {{movie.imdbRating}}  <img class="pb-1" src="../assets/star.svg"></li>
+                <a href="https://www.imdb.com/title/{{movie.imdbID}}" target="_blank">
+                    <img class="mt-2" src="../assets/imdb.png" width="100px">
+                </a>
+            </ul>
+
+        </div>
+    </div>
+</div>

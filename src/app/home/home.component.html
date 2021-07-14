@@ -1,2 +1,8 @@
 <searh-bar (movies)="displayMovie($event)"></searh-bar>
-<movies-container [movies] = "movies"></movies-container>
+<div class="container">
+
+    <filter [selectedFilter]="selectedFilter" (filter)="filterChanged($event)"></filter>
+    <p class="text-danger">{{errorMessage}}</p>
+    <movies-container [movies] = "movies"></movies-container>
+
+</div>

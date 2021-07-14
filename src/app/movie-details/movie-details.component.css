@@ -1,0 +1,27 @@
+
+
+.movie-details ul{
+    list-style: none;
+}
+
+.movie-details ul li{
+    margin-bottom: 5px;
+}
+
+img {
+    border-radius: 3px;
+}
+
+
+.genre{
+    border:1px solid #cacaca;;
+    border-radius: 20px;
+    padding:5px 8px;
+    margin-right:10px;
+    transition: 0.3s;
+    color:rgb(73, 73, 73);
+}
+
+.genre:hover{
+    background-color: #cacaca;
+}

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Movie } from '../class/movie';
+import { HandleErrorService } from '../service/handle-error.service';
 import { OMDBService } from '../service/omdb.service';
 
 @Component({
@@ -8,13 +9,15 @@ import { OMDBService } from '../service/omdb.service';
   styleUrls: ['./searh-bar.component.css']
 })
 export class SearhBarComponent implements OnInit {
-
-  constructor(private omdbService : OMDBService) { }
+  searchFilter:string = "all";
+  errorMessage = "";
   @Output() movies : EventEmitter<Movie> = new EventEmitter<Movie>();
+  constructor(private omdbService : OMDBService) { }
   ngOnInit(): void {
   }
 
   search(title : HTMLInputElement):void{
+     if (title.value.trim() == "") return;
     // console.log("Button clicked");
     // fetch movies from the api
     this.omdbService.getByTitle(title.value).subscribe(
@@ -22,9 +25,11 @@ export class SearhBarComponent implements OnInit {
          let movie = data; 
          this.movies.emit(movie);
         },
-      error => { console.log("Error : ",error)}
+      error => { 
+        this.errorMessage = HandleErrorService.handleError(error);
+      }
     );
-    
-  }
 
+    this.searchFilter = "search";
+  }
 }
